@@ -9,8 +9,6 @@ function App() {
     <>
       <div>
         <Gallery />
-        <p>Image gallery</p>
-        {/* <ImageGallery /> */}
       </div>
     </>
   );
