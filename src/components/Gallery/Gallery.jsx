@@ -50,10 +50,12 @@ const Gallery = () => {
         <div className='text-center'>
           <h1 className='text-2xl'>Gallery</h1>
         </div>
+        {selectedImageIds.length > 0 && (
         <div className='flex flex-wrap border-b border-slate-200 mb-2'>
-          <p className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4'> <span><input type="checkbox" checked name="" id="" /></span>{deleteMessage} {selectedImageIds.length} Files selected</p>
+          <p className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4'> <span><input type="checkbox" checked readOnly name="" id="" /></span>{deleteMessage} {selectedImageIds.length} Files selected</p>
           <button className=' w-full sm:w-1/2 md:w-2/3 lg:w-3/4 xl:w-4/5 p-4 text-right' onClick={handleDeleteImages}><span className='text-red-700 hover:underline transition-200'>Delete Selected</span></button>
         </div>
+        )}
         <DragDropContext onDragEnd={handleDragEnd}>
           {/* <button className='button' onClick={handleDeleteImages}>Delete Selected</button> */}
           <Droppable droppableId="imageGallery">
